@@ -1,0 +1,23 @@
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:8.2.0' // ✅ Latest AGP
+        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:2.1.10' // ✅ Kotlin Plugin
+        classpath 'com.google.gms:google-services:4.4.0' // ✅ Latest Google Services
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+tasks.register("clean", Delete) {
+    delete rootProject.layout.buildDirectory
+}
